@@ -11,48 +11,7 @@
           <a href="#" class="primary-btn">Discover Now</a>
         </div>
       </div>
-      <div class="col-xl-4 col-lg-5 offset-xl-2 offset-lg-1">
-        <div class="booking-form">
-          <h3>Booking Your Hotel</h3>
-          <form action="#">
-            <div class="check-date">
-              <label for="date-in">Check In:</label>
-              <input
-                type="date"
-                class="date-input"
-                id="date-in"
-                autocomplete="none"
-              />
-              <!-- <i class="icon_calendar"></i> -->
-            </div>
-            <div class="check-date">
-              <label for="date-out">Check Out:</label>
-              <input
-                type="date"
-                class="date-input"
-                id="date-out"
-                autocomplete="none"
-              />
-              <!-- <i class="icon_calendar"></i> -->
-            </div>
-            <div class="select-option">
-              <label for="guest">Guests:</label>
-              <select id="guest" class="nice-select">
-                <option value="">2 Adults</option>
-                <option value="">3 Adults</option>
-              </select>
-            </div>
-            <div class="select-option">
-              <label for="room">Room:</label>
-              <select id="room" class="nice-select" tabindex="0">
-                <option value="" class="option">1 Room</option>
-                <option value="" class="option">2 Room</option>
-              </select>
-            </div>
-            <button type="submit">Check Availability</button>
-          </form>
-        </div>
-      </div>
+      <app-booking-form></app-booking-form>
     </div>
   </div>
   <div class="hero-slider">
