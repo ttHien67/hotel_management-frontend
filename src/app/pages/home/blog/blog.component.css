@@ -1,0 +1,66 @@
+/*---------------------
+  Blog and Event
+-----------------------*/
+
+.blog-section {
+	padding-bottom: 70px;
+}
+.blog-section .section-title {
+	margin-bottom: 36px;
+}
+
+/*---------------------
+  Blog Section
+-----------------------*/
+
+.blog-section.blog-page {
+	padding-top: 0;
+	padding-bottom: 88px;
+}
+.blog-item {
+	height: 450px;
+	position: relative;
+	margin-bottom: 30px;
+	border-radius: 5px;
+}
+.blog-item.small-size {
+	height: 400px;
+}
+.blog-item .bi-text {
+	position: absolute;
+	left: 0;
+	bottom: 25px;
+	width: 100%;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.blog-item .bi-text .b-tag {
+	display: inline-block;
+	color: #ffffff;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	background: #dfa974;
+	padding: 3px 10px;
+	border-radius: 2px;
+}
+.blog-item .bi-text h4 {
+	margin-top: 18px;
+	margin-bottom: 18px;
+}
+.blog-item .bi-text h4 a {
+	color: #ffffff;
+}
+.blog-item .bi-text .b-time {
+	font-size: 12px;
+	color: #ffffff;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+.load-more {
+	text-align: center;
+	padding-top: 30px;
+}
+.load-more .primary-btn {
+	color: #19191a;
+}
