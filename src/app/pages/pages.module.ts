@@ -11,7 +11,7 @@ import { PacketRoomComponent } from '../layouts/packet-room/packet-room.componen
 import { AboutUsComponent } from './home/about-us/about-us.component';
 import { BlogComponent } from './home/blog/blog.component';
 import { BreadCrumbComponent } from '../layouts/bread-crumb/bread-crumb.component';
-import { RoomComponent } from './rooms/room/room.component';
+import { RoomComponent } from '../layouts/room/room.component';
 import { RoomDetailComponent } from './room-detail/room-detail.component';
 import { BookingFormComponent } from '../layouts/booking-form/booking-form.component';
 import { ContactComponent } from './contact/contact.component';

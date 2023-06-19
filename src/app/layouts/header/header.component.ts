@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  isActive: Number = 1;
 
+  constructor() { }
+  
   ngOnInit() {
+    
+  }
+
+  click(number: Number) {
+    this.isActive = number;
   }
 
 }

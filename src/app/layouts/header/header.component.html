@@ -13,20 +13,30 @@
           <div class="nav-menu">
             <nav class="mainmenu">
               <ul>
-                <li class="active"><a routerLink="/">Home</a></li>
-                <li><a routerLink="/rooms">Rooms</a></li>
-                <li><a href="">About Us</a></li>
-                <li>
+                <li (click)="click(1)" [ngClass]="{ active: isActive === 1 }">
+                  <a routerLink="/">Home</a>
+                </li>
+                <li (click)="click(2)" [ngClass]="{ active: isActive === 2 }">
+                  <a routerLink="/rooms">Rooms</a>
+                </li>
+                <li (click)="click(3)" [ngClass]="{ active: isActive === 3 }">
+                  <a href="">About Us</a>
+                </li>
+                <li (click)="click(4)" [ngClass]="{ active: isActive === 4 }">
                   <a href="">Pages</a>
                   <ul class="dropdown">
-                    <li><a href="">Room Details</a></li>
+                    <li><a routerLink="/room/detail">Room Details</a></li>
                     <li><a href="">Blog Details</a></li>
                     <li><a href="#">Family Room</a></li>
                     <li><a href="#">Premium Room</a></li>
                   </ul>
                 </li>
-                <li><a href="">News</a></li>
-                <li><a href="/contact">Contact</a></li>
+                <li (click)="click(5)" [ngClass]="{ active: isActive === 5 }">
+                  <a href="">News</a>
+                </li>
+                <li (click)="click(6)" [ngClass]="{ active: isActive === 6 }">
+                  <a routerLink="/contact">Contact</a>
+                </li>
               </ul>
             </nav>
             <div class="nav-right search-switch">
