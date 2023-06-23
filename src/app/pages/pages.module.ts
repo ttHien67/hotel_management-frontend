@@ -15,6 +15,7 @@ import { RoomComponent } from '../layouts/room/room.component';
 import { RoomDetailComponent } from './room-detail/room-detail.component';
 import { BookingFormComponent } from '../layouts/booking-form/booking-form.component';
 import { ContactComponent } from './contact/contact.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { ContactComponent } from './contact/contact.component';
     PagesRoutingModule,
     CarouselModule,
     BrowserAnimationsModule,
+    NgxPaginationModule
   ],
   declarations: [
     HomeComponent,

@@ -10,7 +10,9 @@ import { RoomService } from 'src/app/services/module/room.service';
 export class RoomsComponent implements OnInit {
 
   listRoom: any;
-  limit = 6;
+  limit: number = 6;
+  pageSize: number = 3;
+  page: number = 1;
 
   constructor(
     private roomService: RoomService,
@@ -22,7 +24,12 @@ export class RoomsComponent implements OnInit {
   }
   
   getRoom() {
-    this.roomService.getRoom({}).subscribe(res => {
+    const json = {
+      limit: this.limit,
+      page: this.page
+    }
+
+    this.roomService.getRoom(json).subscribe(res => {
       if(res.errorCode === "0") {
         this.listRoom = res.data;
         this.limit = res.limit;
@@ -31,6 +38,10 @@ export class RoomsComponent implements OnInit {
       }
     })
     
+  }
+
+  onPageChange(e : any) {
+    this.page = e;
   }
 
 }
