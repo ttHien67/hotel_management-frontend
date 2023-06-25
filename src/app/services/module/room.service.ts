@@ -18,4 +18,8 @@ export class RoomService {
   getRoom(payload: any) {
     return this.http.post<BaseListResponse>(CommandURL.ROOM + '/getRoom', payload, {headers: this.header});
   }
+
+  checkRoom(payload: any) {
+    return this.http.post<BaseListResponse>(CommandURL.ROOM + '/checkRoom', payload, {headers: this.header});
+  }
 }

@@ -1,7 +1,7 @@
 <div class="col-xl-4 col-lg-5">
   <div class="booking-form">
     <h3>Booking Your Hotel</h3>
-    <form action="#">
+    <form [formGroup]="form">
       <div class="check-date">
         <label for="date-in">Check In:</label>
         <input
@@ -9,7 +9,15 @@
           class="date-input"
           id="date-in"
           autocomplete="none"
+          formControlName="checkIn"
+          [ngClass]="{ 'is-invalid': isSubmit && f.checkIn.errors }"
+          [min]="today"
         />
+        <div *ngIf="isSubmit && f.checkIn.errors" class="invalid-feedback">
+          <span *ngIf="f.checkIn.errors.required"
+            >Please pick your check in date</span
+          ><br />
+        </div>
         <!-- <i class="icon_calendar"></i> -->
       </div>
       <div class="check-date">
@@ -19,24 +27,59 @@
           class="date-input"
           id="date-out"
           autocomplete="none"
+          formControlName="checkOut"
+          [ngClass]="{ 'is-invalid': isSubmit && f.checkOut.errors }"
+          [min]="today"
         />
+        <div *ngIf="isSubmit && f.checkOut.errors" class="invalid-feedback">
+          <span *ngIf="f.checkOut.errors.required"
+            >Please pick your check out date</span
+          ><br />
+        </div>
+        <div *ngIf="isSubmit && !isAvailableDay" class="invalid-feedback">
+          <span>Your check out date is not suitable</span><br />
+        </div>
         <!-- <i class="icon_calendar"></i> -->
       </div>
-      <div class="select-option">
+      <div class="select-option form-group">
         <label for="guest">Guests:</label>
-        <select id="guest" class="nice-select">
-          <option value="">2 Adults</option>
-          <option value="">3 Adults</option>
-        </select>
+        <ng-select
+          [items]="guest"
+          bindLabel="name"
+          bindValue="id"
+          class="nice-select"
+          formControlName="quantityGuest"
+          [ngClass]="{ 'is-invalid': isSubmit && f.quantityGuest.errors }"
+        >
+        </ng-select>
+
+        <div
+          *ngIf="isSubmit && f.quantityGuest.errors"
+          class="invalid-feedback"
+        >
+          <span *ngIf="f.quantityGuest.errors.required"
+            >Please select your number people</span
+          ><br />
+        </div>
       </div>
       <div class="select-option">
         <label for="room">Room:</label>
-        <select id="room" class="nice-select" tabindex="0">
-          <option value="" class="option">1 Room</option>
-          <option value="" class="option">2 Room</option>
-        </select>
+        <ng-select
+          [items]="room"
+          bindLabel="name"
+          bindValue="id"
+          class="nice-select"
+          formControlName="quantityRoom"
+          [ngClass]="{ 'is-invalid': isSubmit && f.quantityRoom.errors }"
+        >
+        </ng-select>
+        <div *ngIf="isSubmit && f.quantityRoom.errors" class="invalid-feedback">
+          <span *ngIf="f.quantityRoom.errors.required"
+            >Please pick your quantity room</span
+          ><br />
+        </div>
       </div>
-      <button type="submit">Check Availability</button>
+      <button (click)="onSubmit()" type="button">Check Availability</button>
     </form>
   </div>
 </div>

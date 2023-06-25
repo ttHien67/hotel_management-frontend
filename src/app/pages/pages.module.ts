@@ -16,6 +16,8 @@ import { RoomDetailComponent } from './room-detail/room-detail.component';
 import { BookingFormComponent } from '../layouts/booking-form/booking-form.component';
 import { ContactComponent } from './contact/contact.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -23,7 +25,10 @@ import {NgxPaginationModule} from 'ngx-pagination';
     PagesRoutingModule,
     CarouselModule,
     BrowserAnimationsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgSelectModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     HomeComponent,
