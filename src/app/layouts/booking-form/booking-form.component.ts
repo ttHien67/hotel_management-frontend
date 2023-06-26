@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { RoomService } from 'src/app/services/module/room.service';
 
@@ -11,6 +12,7 @@ import { RoomService } from 'src/app/services/module/room.service';
 export class BookingFormComponent implements OnInit {
 
   @Input() item: any;
+  @Input() roomId: any;
 
   guest: any = [
     {id: 2, name: '2 adults'},
@@ -33,7 +35,8 @@ export class BookingFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private roomService: RoomService,
-    private toastService: ToastrService
+    private toastService: ToastrService,
+    private router: Router
   ) { }
   
   get f(){
@@ -41,9 +44,7 @@ export class BookingFormComponent implements OnInit {
   }
 
   ngOnInit() {
-    
     this.initForm();
-    
   }
 
   initForm() {
@@ -58,25 +59,29 @@ export class BookingFormComponent implements OnInit {
 
   onSubmit() {
     this.isSubmit = true;
+    // check check in date must be smaller check out date
     this.isAvailableDay = Date.parse(this.f.checkIn.value) <= Date.parse(this.f.checkOut.value);
 
     if(this.form.status === 'VALID' && this.isAvailableDay) {
       const json = this.form.value;
+      // pass room id for checking
+      if(this.roomId) {
+        json.id = this.roomId;
+      }
+      
       this.roomService.checkRoom(json).subscribe(res => {
         if(res.errorCode === '0') {
-          this.toastService.success(res.errorDesc);
+          if(this.roomId) {
+            this.toastService.success(res.errorDesc);
+          }else {
+            this.toastService.success(res.errorDesc);
+            this.router.navigate(['/rooms'],{state:{data: res.data}});
+          }
         }else {
           this.toastService.error(res.errorDesc);
         }
       })
-    }else {
-      console.log("loi");
-      
     }
-    
-    
-    
-    
   }
 
 }

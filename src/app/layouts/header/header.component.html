@@ -13,16 +13,19 @@
           <div class="nav-menu">
             <nav class="mainmenu">
               <ul>
-                <li (click)="click(1)" [ngClass]="{ active: isActive === 1 }">
+                <li
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                >
                   <a routerLink="/">Home</a>
                 </li>
-                <li (click)="click(2)" [ngClass]="{ active: isActive === 2 }">
+                <li routerLinkActive="active">
                   <a routerLink="/rooms">Rooms</a>
                 </li>
-                <li (click)="click(3)" [ngClass]="{ active: isActive === 3 }">
+                <li routerLinkActive="active">
                   <a href="">About Us</a>
                 </li>
-                <li (click)="click(4)" [ngClass]="{ active: isActive === 4 }">
+                <li routerLinkActive="active">
                   <a href="">Pages</a>
                   <ul class="dropdown">
                     <li><a routerLink="/room/detail">Room Details</a></li>
@@ -31,10 +34,10 @@
                     <li><a href="#">Premium Room</a></li>
                   </ul>
                 </li>
-                <li (click)="click(5)" [ngClass]="{ active: isActive === 5 }">
+                <li routerLinkActive="active">
                   <a href="">News</a>
                 </li>
-                <li (click)="click(6)" [ngClass]="{ active: isActive === 6 }">
+                <li routerLinkActive="active">
                   <a routerLink="/contact">Contact</a>
                 </li>
               </ul>

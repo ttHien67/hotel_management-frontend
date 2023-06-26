@@ -11,6 +11,7 @@ import { RoomService } from 'src/app/services/module/room.service';
 export class RoomDetailComponent implements OnInit {
   
   roomInfo: any;
+  idSlug: any;
 
   constructor(
     private _route: ActivatedRoute,
@@ -23,9 +24,9 @@ export class RoomDetailComponent implements OnInit {
   }
 
   getRoom() {
-    let idSlug = this._route.snapshot.paramMap.get('id');
+    this.idSlug = this._route.snapshot.paramMap.get('id');
 
-    this.roomService.getRoom({id: idSlug}).subscribe(res => {
+    this.roomService.getRoom({id: this.idSlug}).subscribe(res => {
       if(res.errorCode === '0') {
         this.roomInfo = res.data;
       }else {

@@ -18,7 +18,7 @@
                   <i class="icon_star"></i>
                   <i class="icon_star-half_alt"></i>
                 </div>
-                <a href="#">Booking Now</a>
+                <a [routerLink]="'/contact/' + roomInfo[0].id">Booking Now</a>
               </div>
             </div>
             <h2>{{ roomInfo[0]?.price }}$<span>/Pernight</span></h2>
@@ -122,7 +122,7 @@
         </div>
       </div>
       <div class="col-lg-4">
-        <app-booking-form></app-booking-form>
+        <app-booking-form [roomId]="idSlug"></app-booking-form>
       </div>
     </div>
   </div>

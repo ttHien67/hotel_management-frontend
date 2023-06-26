@@ -14,13 +14,20 @@ export class RoomsComponent implements OnInit {
   pageSize: number = 3;
   page: number = 1;
 
+  roomsAvailable = history.state.data;
+
   constructor(
     private roomService: RoomService,
     private toastService: ToastrService
   ) { }
 
   ngOnInit() {
-    this.getRoom();
+    if(this.roomsAvailable){
+      this.listRoom = this.roomsAvailable
+    }else {
+      this.getRoom();
+    }
+    
   }
   
   getRoom() {
@@ -31,8 +38,7 @@ export class RoomsComponent implements OnInit {
 
     this.roomService.getRoom(json).subscribe(res => {
       if(res.errorCode === "0") {
-        this.listRoom = res.data;
-        this.limit = res.limit;
+        this.listRoom = res.data; 
       }else {
         this.toastService.error(res.errorDesc);
       }
