@@ -12,6 +12,7 @@
 	margin-right: -15px;
 	position: relative;
 	overflow: hidden;
+	filter: brightness(70%);
 }
 .hp-room-items .hp-room-item:hover .hr-text {
 	bottom: 135px;

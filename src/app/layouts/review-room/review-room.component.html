@@ -1,0 +1,55 @@
+<div class="rd-reviews" *ngIf="listReview">
+  <h4>Reviews</h4>
+  <div *ngFor="let review of listReview">
+    <div class="review-item">
+      <div class="ri-pic">
+        <img [src]="review.avatar" alt="" />
+      </div>
+      <div class="ri-text">
+        <span>{{ formatDate(review.createDate) }}</span>
+        <div class="rating">
+          <i class="icon_star" *ngFor="let i of createRange(review.star)"></i>
+        </div>
+        <h5>{{ review.name }}</h5>
+        <p>
+          {{ review.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="review-add">
+  <h4>Add Review</h4>
+  <form [formGroup]="form" class="ra-form">
+    <div class="row">
+      <div class="col-lg-6">
+        <input
+          type="text"
+          placeholder="Name*"
+          formControlName="name"
+          autocomplete="none"
+        />
+      </div>
+      <div class="col-lg-6">
+        <input type="text" placeholder="Email*" autocomplete="none" />
+      </div>
+      <div class="col-lg-12">
+        <div>
+          <h5>You Rating:</h5>
+          <div class="rating">
+            <i class="icon_star"></i>
+            <i class="icon_star"></i>
+            <i class="icon_star"></i>
+            <i class="icon_star"></i>
+            <i class="icon_star"></i>
+          </div>
+        </div>
+        <textarea
+          placeholder="Your Review"
+          formControlName="description"
+        ></textarea>
+        <button (click)="onSubmit()" type="button">Submit Now</button>
+      </div>
+    </div>
+  </form>
+</div>
