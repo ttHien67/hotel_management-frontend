@@ -10,6 +10,7 @@ import { RoomService } from 'src/app/services/module/room.service';
 })
 export class RoomDetailComponent implements OnInit {
   
+  title: String = "Room";
   roomInfo: any;
   idSlug: any;
 

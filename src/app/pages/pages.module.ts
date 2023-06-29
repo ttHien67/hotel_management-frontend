@@ -19,6 +19,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { ReviewRoomComponent } from '../layouts/review-room/review-room.component';
+import { IntroductionComponent } from './introduction/introduction.component';
 
 @NgModule({
   imports: [
@@ -43,7 +44,8 @@ import { ReviewRoomComponent } from '../layouts/review-room/review-room.componen
     RoomDetailComponent,
     BookingFormComponent,
     ContactComponent,
-    ReviewRoomComponent
+    ReviewRoomComponent,
+    IntroductionComponent
   ]
 })
 export class PagesModule { }

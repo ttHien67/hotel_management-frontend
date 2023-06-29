@@ -9,6 +9,7 @@ import { RoomService } from 'src/app/services/module/room.service';
 })
 export class RoomsComponent implements OnInit {
 
+  title: String = "Rooms";
   listRoom: any;
   limit: number = 6;
   pageSize: number = 3;
