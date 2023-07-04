@@ -5,6 +5,7 @@ import { RoomsComponent } from './rooms/rooms.component';
 import { RoomDetailComponent } from './room-detail/room-detail.component';
 import { ContactComponent } from './contact/contact.component';
 import { IntroductionComponent } from './introduction/introduction.component';
+import { PagesComponent } from './pages.component';
 
 const routes: Routes = [
   {

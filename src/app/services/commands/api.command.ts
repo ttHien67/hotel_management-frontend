@@ -6,4 +6,8 @@ export class CommandURL {
 
     // Review
     public static REVIEW = enviroment.PROCESS_SERVICE + '/api/hotel/review'
+
+    // User
+    public static USER = enviroment.PROCESS_SERVICE + '/api/hotel/user'
+
 }

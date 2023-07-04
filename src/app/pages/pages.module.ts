@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { HomeComponent } from './home/home.component';
 import { PagesRoutingModule } from './pages-routing.module';
 import { RoomsComponent } from './rooms/rooms.component';
 import { SidebarComponent } from './home/sidebar/sidebar.component';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PacketRoomComponent } from '../layouts/packet-room/packet-room.component';
 import { AboutUsComponent } from './home/about-us/about-us.component';
 import { BlogComponent } from './home/blog/blog.component';
@@ -20,17 +19,21 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { ReviewRoomComponent } from '../layouts/review-room/review-room.component';
 import { IntroductionComponent } from './introduction/introduction.component';
+import { PagesComponent } from './pages.component';
+
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule, 
     PagesRoutingModule,
     CarouselModule,
-    BrowserAnimationsModule,
     NgxPaginationModule,
     NgSelectModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   declarations: [
     HomeComponent,
@@ -45,7 +48,12 @@ import { IntroductionComponent } from './introduction/introduction.component';
     BookingFormComponent,
     ContactComponent,
     ReviewRoomComponent,
-    IntroductionComponent
+    IntroductionComponent,
+    PagesComponent,
+    SidebarComponent,
+    AboutUsComponent,
+    PacketRoomComponent,
+    BlogComponent
   ]
 })
 export class PagesModule { }
